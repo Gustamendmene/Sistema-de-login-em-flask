@@ -26,7 +26,7 @@ def login():
         else:
             flash("Usuário ou senha inválidos","error")
             return render_template("login.html")
-   
+
 @app.route("/")
 def main():
     if(session.get("user") is None):
