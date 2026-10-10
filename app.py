@@ -18,8 +18,7 @@ def login():
         data = get_data()
         usuario = request.form.get("username")
         senha = request.form.get("password")
-        print(data[usuario],data[usuario]["senha"])
-        print(usuario,senha)
+ 
         if usuario in data and data[usuario]["senha"]==senha:
             session["user"]=usuario
             flash("Login realizado com sucesso","success")
@@ -27,12 +26,13 @@ def login():
         else:
             flash("Usuário ou senha inválidos","error")
             return render_template("login.html")
-   
+
 @app.route("/")
 def main():
     if(session.get("user") is None):
         return redirect("login")
     else:
         return render_template("home.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
