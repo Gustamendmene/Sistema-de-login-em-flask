@@ -188,6 +188,68 @@ body {
   font-weight: 300;
 }
 
+.flashes {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  align-self: stretch;
+  margin-top: 15px;
+}
+
+.success,
+.error {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 5px;
+  border-radius:1%;
+}
+
+.success {
+  background-color: greenyellow;
+  color: white;
+}
+
+.error {
+  background-color: red;
+  color: white;
+}
+
+.flashes > div {
+  animation: fadeIn 0.5s ease both;
+}
+
+.flashes > div.fade-out {
+  animation: fadeOut 0.5s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+
 /* ---------- Mobile: empilha os painéis ---------- */
 @media (max-width: 560px) {
   .card { flex-direction: column-reverse; height: auto; }
