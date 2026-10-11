@@ -14,7 +14,13 @@ pip install Flask
 # Criar Chave secreta da sessão:
 
 python -c "import secrets; print(secrets.token_hex(32))"
+
+Linux:
+
 export SECRET_KEY="Coloque a chave gerada do comando em cima aqui"
+
+Windows (CMD):
+set SECRET_KEY=COLE_A_CHAVE_GERADA_AQUI
 
 # Rodar projeto:
 
