@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Aluno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Cabeçalho centralizado -->
+        <header class="dashboard-header">
+            <h1>Painel do Aluno</h1>
+            <h2>Bem-vindo, nome_aluno</h2>
+            <p>turma_aluno</p>
+        </header>
+
+        <!-- Tabela estilizada -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DISCIPLINA</th>
+                        <th>NOTA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DESENVOLVIMENTO WEB II</td>
+                        <td>nota_aluno dw</td>
+                    </tr>
+                    <tr>
+                        <td>BANCO DE DADOS</td>
+                        <td>nota_aluno bd</td>
+                    </tr>
+                    <tr>
+                        <td>ESTRUTURA DE DADOS</td>
+                        <td>nota_aluno ed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botão de Logout -->
+        <div class="logout-wrapper">
+            <a href="/logout" class="btn-logout">Sair</a>
+        </div>
+    </div>
+</body>
+</html>
