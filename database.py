@@ -2,24 +2,22 @@
 USUARIOS ={
     "aluno":{
         "senha":"123",
-        "nome":"Daniel",
-        "idade":16,
-        "turma":"3 TDS B",
+        "nome":"João Silva",
+        "turma":"3° ano TDS ",
         "notas":[
-            {"disciplina":"Desenvolvimento Web", "nota":9},      
-            {"disciplina":"Banco de Dados", "nota":7},
-            {"disciplina":"Programação Orientada a Objetos", "nota":7}
+            {"disciplina":"Desenvolvimento Web II", "nota":9.5},      
+            {"disciplina":"Banco de Dados", "nota":8.0},
+            {"disciplina":"Estrutura de dados", "nota":8.8}
         ]
     },
     "maria":{
-        "senha":"456",
-        "nome":"Maria",
-        "idade":17,
-        "turma":"3 TDS A",
+        "senha":"abc",
+        "nome":"Maria Oliveira",
+        "turma":"3° ano TDS ",
         "notas":[
-            {"disciplina":"Desenvolvimento Web", "nota":9},      
-            {"disciplina":"Banco de Dados", "nota":8}, 
-            {"disciplina":"Programação Orientada a Objetos", "nota":7}
+            {"disciplina":"Desenvolvimento Web II", "nota":10.0},      
+            {"disciplina":"Banco de Dados", "nota":8.0}, 
+            {"disciplina":"Estrutura de dados", "nota":9.2} 
         ]
     }
 }
