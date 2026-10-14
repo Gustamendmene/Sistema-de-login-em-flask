@@ -1,0 +1,188 @@
+/* Estilos Globais inspirados no design de referência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #070f2b 0%, #1b1a55 50%, #0d1b2a 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container principal simulando o card centralizado */
+.dashboard-container {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Cabeçalho */
+.dashboard-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-header h2 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+}
+
+.dashboard-header p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tabela Centralizada */
+.table-wrapper {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* Cabeçalho da Tabela */
+thead tr {
+    background-color: rgba(13, 27, 42, 0.7);
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+thead th {
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+/* Linhas e Células da Tabela (Convertido de th para td para manter a semântica correta) */
+tbody td {
+    color: #cbd5e1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Botão de Logout */
+.logout-wrapper {
+    margin-top: 10px;
+}
+
+.btn-logout {
+    display: inline-block;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-logout:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+}
+
+
+.flashes {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  align-self: stretch;
+  margin-top: 15px;
+}
+
+.success,
+.error {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 5px;
+  border-radius:1%;
+}
+
+.success {
+  background-color: greenyellow;
+  color: white;
+}
+
+.error {
+  background-color: red;
+  color: white;
+}
+
+.flashes > div {
+  animation: fadeIn 0.5s ease both;
+}
+
+.flashes > div.fade-out {
+  animation: fadeOut 0.5s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

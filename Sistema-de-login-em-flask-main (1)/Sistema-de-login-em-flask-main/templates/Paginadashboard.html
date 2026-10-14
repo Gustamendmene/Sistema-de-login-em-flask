@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Aluno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Cabeçalho centralizado -->
+        <header class="dashboard-header">
+            <h1>Painel do Aluno</h1>
+            <h2>Bem-vindo, {{nome}}</h2>
+            <p>TURMA {{turma}}</p>
+        </header>
+        <!-- Tabela estilizada -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DISCIPLINA: {{disciplina}}</th>
+                        <th>NOTA :{{nota}}/th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{%for i in notas%}}
+                    <tr>
+                        <td>{{i.disciplina}}</td>
+                        <td>{{i.nota}}</td>
+                    </tr>
+                    {{%else%}}
+                    <tr>
+                        <td colspan="2">Nenhuma nota cadastrada.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botão de Logout -->
+        <div class="logout-wrapper">
+            <a href="/logout" class="btn-logout">Sair</a>
+        </div>
+    </div>
+    {%with messages=get_flashed_messages(with_categories=true)%}
+    {%if messages%}
+    <div class="flashes">
+        {%for category,message in messages%}
+        <div class="{{ category }}">{{ message }}</div>
+        {%endfor%}
+    </div>
+    {%endif%}
+    {%endwith%}
+    <script>
+        document.querySelectorAll('.flashes > div').forEach((flash) => {
+            setTimeout(() => {
+                flash.classList.add('fade-out');
+
+                setTimeout(() => {
+                    flash.remove();
+
+                    const container = document.querySelector('.flashes');
+
+                    if (container && container.children.length === 0) {
+                        container.remove();
+                    }
+                }, 500);
+
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>
