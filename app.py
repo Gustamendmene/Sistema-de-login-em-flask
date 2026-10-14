@@ -45,6 +45,7 @@ def login():
 @login_required
 def logout():
     session.clear()
+    flash("Usuario desconectado com sucesso","success")
     return redirect("/login")
 
 @app.route("/", methods=["GET"])
