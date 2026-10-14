@@ -13,31 +13,31 @@
         <!-- Cabeçalho centralizado -->
         <header class="dashboard-header">
             <h1>Painel do Aluno</h1>
-            <h2>Bem-vindo, Aluno</h2>
-            <p>TURMA</p>
+            <h2>Bem-vindo, {{nome}}</h2>
+            <p>TURMA {{turma}}</p>
         </header>
         <!-- Tabela estilizada -->
         <div class="table-wrapper">
             <table>
                 <thead>
                     <tr>
-                        <th>DISCIPLINA</th>
-                        <th>NOTA</th>
+                        <th>DISCIPLINA: {{disciplina}}</th>
+                        <th>NOTA {{nota}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>DESENVOLVIMENTO WEB II</td>
-                        <td>nota_aluno dw</td>
-                    </tr>
-                    <tr>
-                        <td>BANCO DE DADOS</td>
-                        <td>nota_aluno bd</td>
-                    </tr>
-                    <tr>
-                        <td>ESTRUTURA DE DADOS</td>
-                        <td>nota_aluno ed</td>
-                    </tr>
+                    {%if notas%}
+                        {%for i in notas%}
+                            <tr>
+                                <td>{{i.disciplina}}</td>
+                                <td>{{i.nota}}</td>
+                            </tr>
+                        {%endfor%}
+                    {%else%}
+                        <tr>
+                            <td colspan="2">Nenhuma nota cadastrada.</td>
+                        </tr>
+                {%endif%}
                 </tbody>
             </table>
         </div>
